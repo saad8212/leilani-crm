@@ -5,7 +5,7 @@ const path = require("path");
 const cors = require("cors"); 
 const PORT = process.env.PORT || 5000; 
 const routes = require('./routes/routes');  
-// const attendanceRoutes = require('./routes/attendance')
+const attendanceRoutes = require('./routes/attendance')
 const bodyParser = require('body-parser');
 const { AppError, errorHandler } = require('./utils/errorHandling'); 
 /************** Middlewares ****************/
@@ -26,7 +26,7 @@ let corsOptions = {
 app.use(cors(corsOptions));
  
 /************** Routes ****************/
-// app.use('/attendance' ,attendanceRoutes); /*** Attendance Route ***/ 
+app.use('/attendance' ,attendanceRoutes); /*** Attendance Route ***/ 
 app.use('/' ,routes); /*** Application Route ***/ 
 
  
